@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scene/Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tester" type="Label" parent="."]
+margin_top = 102.0
+margin_right = 1024.0
+margin_bottom = 116.0
+text = "Hit Escape to Return Here"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 126.0
+margin_right = 1024.0
+margin_bottom = 498.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+margin_left = 312.0
+margin_right = 712.0
+margin_bottom = 372.0
+alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer2/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 400, 300 )
+text = "Replace this text with your own.
+Hit the \"Go\" button to launch the prompter
+Hit Escape to return to this screen.
+Resize the window and place it as needed."
+wrap_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer"]
+margin_top = 304.0
+margin_right = 400.0
+margin_bottom = 372.0
+custom_constants/separation = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 94.0
+margin_bottom = 68.0
+
+[node name="FontStyle" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 94.0
+margin_bottom = 20.0
+text = "FontStyle"
+
+[node name="FontSize" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 94.0
+margin_bottom = 44.0
+text = "Font Size"
+
+[node name="FontColor" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 48.0
+margin_right = 94.0
+margin_bottom = 68.0
+text = "Font Color"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 214.0
+margin_bottom = 68.0
+
+[node name="OutlineSize" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 110.0
+margin_bottom = 20.0
+text = "Outline Size"
+
+[node name="OutlineColor" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 110.0
+margin_bottom = 44.0
+text = "OutlineColor"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 224.0
+margin_right = 299.0
+margin_bottom = 68.0
+
+[node name="Moving" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/HBoxContainer"]
+margin_right = 75.0
+margin_bottom = 20.0
+text = "Moving"
+
+[node name="Speed" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/HBoxContainer"]
+margin_top = 24.0
+margin_right = 75.0
+margin_bottom = 44.0
+text = "Speed"
+
+[node name="Capitalized" type="OptionButton" parent="HBoxContainer2/VBoxContainer/HBoxContainer/HBoxContainer"]
+margin_top = 48.0
+margin_right = 75.0
+margin_bottom = 68.0
+text = "Caps"
+
+[node name="Button" type="Button" parent="HBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 309.0
+margin_right = 343.0
+margin_bottom = 68.0
+text = "Go!"
+
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer2/FontStyle" to="." method="_on_FontStyle_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer2/FontSize" to="." method="_on_FontSize_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer2/FontColor" to="." method="_on_FontColor_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer/OutlineSize" to="." method="_on_OutlineSize_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/VBoxContainer/OutlineColor" to="." method="_on_OutlineColor_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/HBoxContainer/Moving" to="." method="_on_Moving_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/HBoxContainer/Speed" to="." method="_on_Speed_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/VBoxContainer/HBoxContainer/HBoxContainer/Capitalized" to="." method="_on_Capitalized_item_selected"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/HBoxContainer/Button" to="." method="_on_NextScene_pressed"]
